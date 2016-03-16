@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Context.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ContextStoreContainer">
+    <EntitySet Name="DemandeSet" EntityType="Context.Store.DemandeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatutSet" EntityType="Context.Store.StatutSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TypeAttestationSet" EntityType="Context.Store.TypeAttestationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CollaborateurSet" EntityType="Context.Store.CollaborateurSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="DemandeStatut" Association="Context.Store.DemandeStatut">
+      <End Role="Demande" EntitySet="DemandeSet" />
+      <End Role="Statut" EntitySet="StatutSet" />
+    </AssociationSet>
+    <AssociationSet Name="DemandeTypeAttestation" Association="Context.Store.DemandeTypeAttestation">
+      <End Role="Demande" EntitySet="DemandeSet" />
+      <End Role="TypeAttestation" EntitySet="TypeAttestationSet" />
+    </AssociationSet>
+    <AssociationSet Name="DemandeCollaborateur" Association="Context.Store.DemandeCollaborateur">
+      <End Role="Demande" EntitySet="DemandeSet" />
+      <End Role="Collaborateur" EntitySet="CollaborateurSet" />
+    </AssociationSet>
+    <AssociationSet Name="DemandeAssistante" Association="Context.Store.DemandeAssistante">
+      <End Role="Demande" EntitySet="DemandeSet" />
+      <End Role="Assistante" EntitySet="CollaborateurSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DemandeSet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateCreation" Type="datetime" Nullable="false" />
+    <Property Name="dateDebutTraitement" Type="datetime" Nullable="true" />
+    <Property Name="dateFinTraitement" Type="datetime" Nullable="true" />
+    <Property Name="Statut_id" Type="int" Nullable="false" />
+    <Property Name="TypeAttestation_id" Type="int" Nullable="false" />
+    <Property Name="Collaborateur_id" Type="int" Nullable="false" />
+    <Property Name="Assistante_id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="StatutSet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="label" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeAttestationSet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="label" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CollaborateurSet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="prenom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cin" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="cnss" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="banque" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="estEligible" Type="bit" Nullable="false" DefaultValue="true" />
+    <Property Name="poste" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <Association Name="DemandeStatut">
+    <End Role="Demande" Type="Context.Store.DemandeSet" Multiplicity="*" />
+    <End Role="Statut" Type="Context.Store.StatutSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Statut">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Demande">
+        <PropertyRef Name="Statut_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DemandeTypeAttestation">
+    <End Role="Demande" Type="Context.Store.DemandeSet" Multiplicity="*" />
+    <End Role="TypeAttestation" Type="Context.Store.TypeAttestationSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TypeAttestation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Demande">
+        <PropertyRef Name="TypeAttestation_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DemandeCollaborateur">
+    <End Role="Demande" Type="Context.Store.DemandeSet" Multiplicity="*" />
+    <End Role="Collaborateur" Type="Context.Store.CollaborateurSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Collaborateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Demande">
+        <PropertyRef Name="Collaborateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DemandeAssistante">
+    <End Role="Demande" Type="Context.Store.DemandeSet" Multiplicity="*" />
+    <End Role="Assistante" Type="Context.Store.CollaborateurSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Assistante">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Demande">
+        <PropertyRef Name="Assistante_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Context" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ContextContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DemandeSet" EntityType="Context.Demande" />
+          <EntitySet Name="StatutSet" EntityType="Context.Statut" />
+          <EntitySet Name="TypeAttestationSet" EntityType="Context.TypeAttestation" />
+          <EntitySet Name="CollaborateurSet" EntityType="Context.Collaborateur" />
+          <AssociationSet Name="DemandeStatut" Association="Context.DemandeStatut">
+            <End Role="Demande" EntitySet="DemandeSet" />
+            <End Role="Statut" EntitySet="StatutSet" />
+          </AssociationSet>
+          <AssociationSet Name="DemandeTypeAttestation" Association="Context.DemandeTypeAttestation">
+            <End Role="Demande" EntitySet="DemandeSet" />
+            <End Role="TypeAttestation" EntitySet="TypeAttestationSet" />
+          </AssociationSet>
+          <AssociationSet Name="DemandeCollaborateur" Association="Context.DemandeCollaborateur">
+            <End Role="Demande" EntitySet="DemandeSet" />
+            <End Role="Collaborateur" EntitySet="CollaborateurSet" />
+          </AssociationSet>
+          <AssociationSet Name="DemandeAssistante" Association="Context.DemandeAssistante">
+            <End Role="Demande" EntitySet="DemandeSet" />
+            <End Role="Assistante" EntitySet="CollaborateurSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Demande">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateCreation" Type="DateTime" Nullable="false" />
+          <Property Name="dateDebutTraitement" Type="DateTime" Nullable="true" />
+          <Property Name="dateFinTraitement" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Statut" Relationship="Context.DemandeStatut" FromRole="Demande" ToRole="Statut" />
+          <NavigationProperty Name="TypeAttestation" Relationship="Context.DemandeTypeAttestation" FromRole="Demande" ToRole="TypeAttestation" />
+          <NavigationProperty Name="Collaborateur" Relationship="Context.DemandeCollaborateur" FromRole="Demande" ToRole="Collaborateur" />
+          <NavigationProperty Name="Assistante" Relationship="Context.DemandeAssistante" FromRole="Demande" ToRole="Assistante" />
+        </EntityType>
+        <EntityType Name="Statut">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="label" Type="String" Nullable="false" />
+          <NavigationProperty Name="Demande" Relationship="Context.DemandeStatut" FromRole="Statut" ToRole="Demande" />
+        </EntityType>
+        <EntityType Name="TypeAttestation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="label" Type="String" Nullable="false" />
+          <NavigationProperty Name="Demande" Relationship="Context.DemandeTypeAttestation" FromRole="TypeAttestation" ToRole="Demande" />
+        </EntityType>
+        <EntityType Name="Collaborateur">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" />
+          <Property Name="prenom" Type="String" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="cin" Type="String" Nullable="true" />
+          <Property Name="cnss" Type="String" Nullable="true" />
+          <Property Name="banque" Type="String" Nullable="true" />
+          <Property Name="estEligible" Type="Boolean" Nullable="false" DefaultValue="true" />
+          <Property Name="poste" Type="String" Nullable="true" />
+          <NavigationProperty Name="Demande" Relationship="Context.DemandeCollaborateur" FromRole="Collaborateur" ToRole="Demande" />
+          <NavigationProperty Name="Demande1" Relationship="Context.DemandeAssistante" FromRole="Assistante" ToRole="Demande" />
+        </EntityType>
+        <Association Name="DemandeStatut">
+          <End Type="Context.Demande" Role="Demande" Multiplicity="*" />
+          <End Type="Context.Statut" Role="Statut" Multiplicity="1" />
+        </Association>
+        <Association Name="DemandeTypeAttestation">
+          <End Type="Context.Demande" Role="Demande" Multiplicity="*" />
+          <End Type="Context.TypeAttestation" Role="TypeAttestation" Multiplicity="1" />
+        </Association>
+        <Association Name="DemandeCollaborateur">
+          <End Type="Context.Demande" Role="Demande" Multiplicity="*" />
+          <End Type="Context.Collaborateur" Role="Collaborateur" Multiplicity="1" />
+        </Association>
+        <Association Name="DemandeAssistante">
+          <End Type="Context.Demande" Role="Demande" Multiplicity="*" />
+          <End Type="Context.Collaborateur" Role="Assistante" Multiplicity="0..1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ContextStoreContainer" CdmEntityContainer="ContextContainer">
+    <EntitySetMapping Name="DemandeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Context.Demande)">
+        <MappingFragment StoreEntitySet="DemandeSet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dateCreation" ColumnName="dateCreation" />
+          <ScalarProperty Name="dateDebutTraitement" ColumnName="dateDebutTraitement" />
+          <ScalarProperty Name="dateFinTraitement" ColumnName="dateFinTraitement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatutSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Context.Statut)">
+        <MappingFragment StoreEntitySet="StatutSet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="label" ColumnName="label" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeAttestationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Context.TypeAttestation)">
+        <MappingFragment StoreEntitySet="TypeAttestationSet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="label" ColumnName="label" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CollaborateurSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Context.Collaborateur)">
+        <MappingFragment StoreEntitySet="CollaborateurSet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="cin" ColumnName="cin" />
+          <ScalarProperty Name="cnss" ColumnName="cnss" />
+          <ScalarProperty Name="banque" ColumnName="banque" />
+          <ScalarProperty Name="estEligible" ColumnName="estEligible" />
+          <ScalarProperty Name="poste" ColumnName="poste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DemandeStatut" TypeName="Context.DemandeStatut" StoreEntitySet="DemandeSet">
+      <EndProperty Name="Statut">
+        <ScalarProperty Name="id" ColumnName="Statut_id" />
+      </EndProperty>
+      <EndProperty Name="Demande">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DemandeTypeAttestation" TypeName="Context.DemandeTypeAttestation" StoreEntitySet="DemandeSet">
+      <EndProperty Name="TypeAttestation">
+        <ScalarProperty Name="id" ColumnName="TypeAttestation_id" />
+      </EndProperty>
+      <EndProperty Name="Demande">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DemandeCollaborateur" TypeName="Context.DemandeCollaborateur" StoreEntitySet="DemandeSet">
+      <EndProperty Name="Collaborateur">
+        <ScalarProperty Name="id" ColumnName="Collaborateur_id" />
+      </EndProperty>
+      <EndProperty Name="Demande">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DemandeAssistante" TypeName="Context.DemandeAssistante" StoreEntitySet="DemandeSet">
+      <EndProperty Name="Assistante">
+        <ScalarProperty Name="id" ColumnName="Assistante_id" />
+      </EndProperty>
+      <EndProperty Name="Demande">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <Condition ColumnName="Assistante_id" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

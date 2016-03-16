@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<span class="sec-icon fa fa-users"></span>
+<div class="hs-inner">
+    <span class="before-title">Liste des demandes en attente</span>
+    <br/>
+    <!--Tableau des demandes -->
+    <table id="id="bootstrap-table" class="table table-striped table-bordered" cellspacing="0" >
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Attestation</th>
+                <th>Date de la demande</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Attestation</th>
+                <th>Date de la demande</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>@Html.CheckBox("id")</td>
+                <td>Elhammouti</td>
+                <td>Meryem</td>
+                <td>Attestation de Salaire</td>
+                <td>16/03/2016</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="collab" value="2" /></td>
+                <td>Elhammouti</td>
+                <td>Meryem</td>
+                <td>Attestation de Salaire</td>
+                <td>16/03/2016</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="collab" value="3" /></td>
+                <td>Elhammouti</td>
+                <td>Meryem</td>
+                <td>Attestation de Salaire</td>
+                <td>16/03/2016</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-success" style="border-color:#b39964; background:#b39964;"><i class="fa fa-plus"></i>Ajouter à mes tâches</button>
+    <!--Fin tableau des demadnes-->
+
+</div>

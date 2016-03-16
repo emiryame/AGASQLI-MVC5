@@ -1,0 +1,117 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+    <!-- Page preloader -->
+    <div id="page-loader">
+        <canvas id="demo-canvas"></canvas>
+    </div>
+    <!-- container -->
+    <div id="hs-container" class="hs-container">
+
+        <aside class="hs-menu" id="hs-menu">
+            <!-- <canvas id="demo-canvas"></canvas> -->
+            <!-- Logo Image-->
+            <div class="hs-headline">
+                <a id="my-link" href="#my-panel"><i class="fa fa-bars"></i></a>
+                <a href="#" class="download"><i class="fa fa-cloud-download"></i></a>
+                <img src="~/Content/images/logo.png" alt="" />
+
+                <div class="profile_info">
+                    <h4>aelfarh@sqli.com</h4>
+                    <h6><span class="fa fa-location-arrow"></span>&nbsp;&nbsp;&nbsp;Assistance site Oujda</h6>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <div class="separator-aside"></div>
+            <!-- End Logo Image-->
+            <!-- menu -->
+            <nav>
+                <a href="#section6"><span class="menu_name">En attente</span><span class="fa fa-users"></span> </a>
+                <a href="#section1"><span class="menu_name">Mes tâches</span><span class="fa fa-stack-exchange"></span> </a>
+                <a href="#section2"><span class="menu_name">Mettre à jour</span><span class="fa fa-eye"></span> </a>
+                <a href="#section3"><span class="menu_name">Attestations de stage</span><span class="fa fa-laptop"></span> </a>
+                <a href="#section4"><span class="menu_name">Lettres de démission</span><span class="fa fa-reply-all"></span> </a>
+                <a href="#section4"><span class="menu_name">Historiques</span><span class="fa fa-history"></span> </a>
+                <a href="#section5"><span class="menu_name">Statistiques</span><span class="fa fa-bar-chart"></span> </a>
+            </nav>
+            <!-- end menu-->
+            <!-- social icons -->
+            <div class="aside-footer">
+                <a href="http://app.sqli.com" target="_blank"><i class="fa fa fa-dribbble"></i></a>
+                <a href="http://outlook.office.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
+                <a href="https://isc-careers.maroc.sqli.com/" target="_blank"><i class="fa fa-laptop"></i></a>
+
+            </div>
+            <!-- end social icons -->
+        </aside>
+        <!-- End sidebar -->
+        <!-- Go To Top Button -->
+        <a href="#hs-menu" class="hs-totop-link"><i class="fa fa-chevron-up"></i></a>
+        <!-- End Go To Top Button -->
+        <!-- hs-content-scroller -->
+        <div class="hs-content-scroller">
+            <!-- Header -->
+            <div id="header_container">
+                <div id="header">
+                    <div>
+                        <a class="home"><i class="fa fa-home"></i></a>
+                    </div>
+                    <div>
+                        <a href="" class="previous-page arrow"><i class="fa fa-angle-left"></i></a>
+                    </div>
+                    <div>
+                        <a href="" class="next-page arrow"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <!-- News scroll -->
+                    <div class="news-scroll">
+                        <span><i class="fa fa-line-chart"></i>RECENT ACTIVITY : </span>
+
+                    </div>
+                    <!-- End News scroll -->
+                </div>
+            </div>
+            <!-- End Header -->
+            <div class="container body-content">
+                <!-- hs-content-wrapper -->
+                <div class="hs-content-wrapper">
+                    <!-- Body page section -->
+                    <article class="hs-content about-section" id="section1">
+                        @RenderBody()
+                        <br>
+                    </article>
+                    <!-- End Body page Section -->
+                </div>
+                <!-- End hs-content-wrapper -->
+                <hr />
+                <footer>
+                    <p>&copy; 2016 - AGASQLI</p>
+                </footer>
+            </div>
+        </div>
+        <!-- End hs-content-scroller -->
+
+    </div>
+    <!-- End container -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/js")
+    @RenderSection("scripts", required: false)
+    <script>
+    $(document).ready( function () {
+        $('#bootstrap-table').bdt();
+    });
+    </script>
+</body>
+</html>
