@@ -1,0 +1,77 @@
+﻿@model IEnumerable<AGASQLI.ViewModels.DemandeViewModel>
+@{
+}
+<span class="sec-icon fa fa-users"></span>
+<div class="hs-inner">
+    <span class="before-title">Liste des demandes en attente</span>
+    <br />
+    @using (Html.BeginForm())
+    {
+        <table id="id=" bootstrap-table" class="table table-striped table-bordered" cellspacing="0">
+            <tr>
+                <th>
+
+                </th>
+                <th>
+                    Nom
+                </th>
+                <th>
+                    Prenom
+                </th>
+                <th>
+                    Date de création
+                </th>
+                <th>
+                    Attestation
+                </th>
+                <th>
+                    Date début de traitement
+                </th>
+                <th>
+                    Statut
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.CheckBoxFor(modelItem => item.IsChecked)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Demande.Collaborateur.Nom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Demande.Collaborateur.Prenom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Demande.DateCreation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Demande.TypeAttestation.Label)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Demande.DateDebutTraitement)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Demande.Statut.Label)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Demande.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Demande.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Demande.Id })
+                    </td>
+                </tr>
+
+            }
+        </table>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    }
+    <button type="button" class="btn btn-success" style="border-color:#b39964; background:#b39964; float:right;"><i class="fa fa-plus"></i>Ajouter à mes tâches</button>
+   
+

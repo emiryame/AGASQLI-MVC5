@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="13bac076-f43a-4823-a430-81f420125001" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:14058/TraiterDemande.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TraiterDemande.xsd" MetadataType="Schema" ID="5e08da80-540f-4fae-b3dc-182dbefe4481" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?xsd=xsd1" />
+    <MetadataFile FileName="TraiterDemande.wsdl" MetadataType="Wsdl" ID="c78bab0d-65ea-4e34-b168-d3151d337c50" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?wsdl" />
+    <MetadataFile FileName="TraiterDemande1.xsd" MetadataType="Schema" ID="6972f2c3-a8d9-448d-ac25-4f30e43c3786" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?xsd=xsd0" />
+    <MetadataFile FileName="TraiterDemande.disco" MetadataType="Disco" ID="05686804-7ed9-4578-b721-73fc900de7cf" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?disco" />
+    <MetadataFile FileName="TraiterDemande2.xsd" MetadataType="Schema" ID="62b4e044-8c9e-4c8d-902f-07c0319043be" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
