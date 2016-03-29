@@ -18,7 +18,7 @@ namespace AGASQLI.Controllers
         private AGA.Data.AGADataBaseContainer db = new AGA.Data.AGADataBaseContainer();
 
         // GET: Demandes
-        //TODO: A netoyer..(Juste pour le test) 
+        //TODO: A netoyer..
         public ActionResult EnAttente()
         {
             AGASQLI.Services.TraiterDemandeClient demandeService = new AGASQLI.Services.TraiterDemandeClient();
