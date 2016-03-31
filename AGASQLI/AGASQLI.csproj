@@ -396,28 +396,20 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AGA.Business\AGA.Business.csproj">
-      <Project>{eb9c463f-fd9b-45d7-be87-57f68cab801b}</Project>
-      <Name>AGA.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\AGA.Data\AGA.Data.csproj">
-      <Project>{dd4033de-110f-48ad-937a-7a8d67d0ded2}</Project>
-      <Name>AGA.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\AGA.Dto\AGA.DTO.csproj">
-      <Project>{3fb72c65-3dc1-439f-9878-b74cc511b84e}</Project>
-      <Name>AGA.DTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\AGA.Services\AGA.Services.csproj">
-      <Project>{89f86ff7-7bfb-475b-adea-c56f5995a87b}</Project>
-      <Name>AGA.Services</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServicesDemande\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AGA.Dto\AGA.DTO.csproj">
+      <Project>{3fb72c65-3dc1-439f-9878-b74cc511b84e}</Project>
+      <Name>AGA.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AGA.Services\AGA.Services.csproj">
+      <Project>{89f86ff7-7bfb-475b-adea-c56f5995a87b}</Project>
+      <Name>AGA.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

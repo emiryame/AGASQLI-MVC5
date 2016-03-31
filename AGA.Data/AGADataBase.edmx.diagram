@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="76de7abe2004487a8ec9859c6b248556" Name="Diagram1" ZoomLevel="97" >
+        <EntityTypeShape EntityType="AGADataBase.Demande" Width="1.5" PointX="3.25" PointY="3.5" />
+        <EntityTypeShape EntityType="AGADataBase.TypeAttestation" Width="1.5" PointX="6.5" PointY="2.875" />
+        <EntityTypeShape EntityType="AGADataBase.Statut" Width="1.5" PointX="5.5" PointY="5.125" />
+        <EntityTypeShape EntityType="AGADataBase.Collaborateur" Width="1.5" PointX="0.75" PointY="3" />
+        <EntityTypeShape EntityType="AGADataBase.AttestationConge" Width="1.5" PointX="1.25" PointY="6.5" />
+        <AssociationConnector Association="AGADataBase.DemandeTypeAttestation" />
+        <AssociationConnector Association="AGADataBase.AttestationCongeDemande" />
+        <AssociationConnector Association="AGADataBase.CollaborateurDemande" />
+        <AssociationConnector Association="AGADataBase.DemandeStatut" />
+        <AssociationConnector Association="AGADataBase.CollaborateurAssistante" />
+        <EntityTypeShape EntityType="AGADataBase.MailTemplate" Width="1.75" PointX="5.375" PointY="7.125" />
+        <EntityTypeShape EntityType="AGADataBase.AutorisationPoursuiteEtudes" Width="2" PointX="5.5" PointY="0.5" />
+        <EntityTypeShape EntityType="AGADataBase.AutorisationCoursVacation" Width="1.875" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="AGADataBase.AutorisationCoursVacationDemande" />
+        <AssociationConnector Association="AGADataBase.DemandeAutorisationPoursuiteEtudes" />
+        <EntityTypeShape EntityType="AGADataBase.Civilite" PointX="3.125" PointY="8.625" Width="1.5" />
+        <AssociationConnector Association="AGADataBase.CollaborateurCivilite" />
+        <AssociationConnector Association="AGADataBase.StatutMailTemplate" />
+        <EntityTypeShape EntityType="AGADataBase.Stagiaire" Width="1.5" PointX="5.125" PointY="9.25" />
+        <AssociationConnector Association="AGADataBase.StagiaireCivilite" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
