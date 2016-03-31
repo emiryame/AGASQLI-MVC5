@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AGA.Data
+namespace AGA.DAL
 {
     using System;
     using System.Collections.Generic;

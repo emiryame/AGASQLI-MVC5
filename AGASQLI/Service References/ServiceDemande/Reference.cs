@@ -16,10 +16,10 @@ namespace AGASQLI.ServiceDemande {
     public interface ITraiterDemande {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/GetDemandesEnAttenteList", ReplyAction="http://tempuri.org/ITraiterDemande/GetDemandesEnAttenteListResponse")]
-        AGA.DTO.Models.Demande[] GetDemandesEnAttenteList();
+        AGA.Common.DTO.Models.Demande[] GetDemandesEnAttenteList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/GetDemandesEnAttenteList", ReplyAction="http://tempuri.org/ITraiterDemande/GetDemandesEnAttenteListResponse")]
-        System.Threading.Tasks.Task<AGA.DTO.Models.Demande[]> GetDemandesEnAttenteListAsync();
+        System.Threading.Tasks.Task<AGA.Common.DTO.Models.Demande[]> GetDemandesEnAttenteListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/GetNombreDemandesEnAttente", ReplyAction="http://tempuri.org/ITraiterDemande/GetNombreDemandesEnAttenteResponse")]
         int GetNombreDemandesEnAttente();
@@ -28,58 +28,58 @@ namespace AGASQLI.ServiceDemande {
         System.Threading.Tasks.Task<int> GetNombreDemandesEnAttenteAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/GetDemandesListParCollaborateur", ReplyAction="http://tempuri.org/ITraiterDemande/GetDemandesListParCollaborateurResponse")]
-        AGA.DTO.Models.Demande[] GetDemandesListParCollaborateur(int idCollaborateur);
+        AGA.Common.DTO.Models.Demande[] GetDemandesListParCollaborateur(int idCollaborateur);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/GetDemandesListParCollaborateur", ReplyAction="http://tempuri.org/ITraiterDemande/GetDemandesListParCollaborateurResponse")]
-        System.Threading.Tasks.Task<AGA.DTO.Models.Demande[]> GetDemandesListParCollaborateurAsync(int idCollaborateur);
+        System.Threading.Tasks.Task<AGA.Common.DTO.Models.Demande[]> GetDemandesListParCollaborateurAsync(int idCollaborateur);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/GetDemandesEnCoursParAssistante", ReplyAction="http://tempuri.org/ITraiterDemande/GetDemandesEnCoursParAssistanteResponse")]
-        AGA.DTO.Models.Demande[] GetDemandesEnCoursParAssistante(int idAssistante);
+        AGA.Common.DTO.Models.Demande[] GetDemandesEnCoursParAssistante(int idAssistante);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/GetDemandesEnCoursParAssistante", ReplyAction="http://tempuri.org/ITraiterDemande/GetDemandesEnCoursParAssistanteResponse")]
-        System.Threading.Tasks.Task<AGA.DTO.Models.Demande[]> GetDemandesEnCoursParAssistanteAsync(int idAssistante);
+        System.Threading.Tasks.Task<AGA.Common.DTO.Models.Demande[]> GetDemandesEnCoursParAssistanteAsync(int idAssistante);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/AjouterDemandesListAssistante", ReplyAction="http://tempuri.org/ITraiterDemande/AjouterDemandesListAssistanteResponse")]
-        void AjouterDemandesListAssistante(AGA.DTO.Models.Demande[] demandesList, int idAssistante);
+        void AjouterDemandesListAssistante(AGA.Common.DTO.Models.Demande[] demandesList, int idAssistante);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/AjouterDemandesListAssistante", ReplyAction="http://tempuri.org/ITraiterDemande/AjouterDemandesListAssistanteResponse")]
-        System.Threading.Tasks.Task AjouterDemandesListAssistanteAsync(AGA.DTO.Models.Demande[] demandesList, int idAssistante);
+        System.Threading.Tasks.Task AjouterDemandesListAssistanteAsync(AGA.Common.DTO.Models.Demande[] demandesList, int idAssistante);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutEnCours", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutEnCoursResponse")]
-        void ChangerStatutEnCours(AGA.DTO.Models.Demande demande);
+        void ChangerStatutEnCours(AGA.Common.DTO.Models.Demande demande);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutEnCours", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutEnCoursResponse")]
-        System.Threading.Tasks.Task ChangerStatutEnCoursAsync(AGA.DTO.Models.Demande demande);
+        System.Threading.Tasks.Task ChangerStatutEnCoursAsync(AGA.Common.DTO.Models.Demande demande);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutEnCoursList", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutEnCoursListResponse")]
-        void ChangerStatutEnCoursList(AGA.DTO.Models.Demande[] demandesList);
+        void ChangerStatutEnCoursList(AGA.Common.DTO.Models.Demande[] demandesList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutEnCoursList", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutEnCoursListResponse")]
-        System.Threading.Tasks.Task ChangerStatutEnCoursListAsync(AGA.DTO.Models.Demande[] demandesList);
+        System.Threading.Tasks.Task ChangerStatutEnCoursListAsync(AGA.Common.DTO.Models.Demande[] demandesList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutPrete", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutPreteResponse")]
-        void ChangerStatutPrete(AGA.DTO.Models.Demande demande);
+        void ChangerStatutPrete(AGA.Common.DTO.Models.Demande demande);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutPrete", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutPreteResponse")]
-        System.Threading.Tasks.Task ChangerStatutPreteAsync(AGA.DTO.Models.Demande demande);
+        System.Threading.Tasks.Task ChangerStatutPreteAsync(AGA.Common.DTO.Models.Demande demande);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutPreteList", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutPreteListResponse")]
-        void ChangerStatutPreteList(AGA.DTO.Models.Demande[] demandesList);
+        void ChangerStatutPreteList(AGA.Common.DTO.Models.Demande[] demandesList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutPreteList", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutPreteListResponse")]
-        System.Threading.Tasks.Task ChangerStatutPreteListAsync(AGA.DTO.Models.Demande[] demandesList);
+        System.Threading.Tasks.Task ChangerStatutPreteListAsync(AGA.Common.DTO.Models.Demande[] demandesList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutRejetee", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutRejeteeResponse")]
-        void ChangerStatutRejetee(AGA.DTO.Models.Demande demande);
+        void ChangerStatutRejetee(AGA.Common.DTO.Models.Demande demande);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutRejetee", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutRejeteeResponse")]
-        System.Threading.Tasks.Task ChangerStatutRejeteeAsync(AGA.DTO.Models.Demande demande);
+        System.Threading.Tasks.Task ChangerStatutRejeteeAsync(AGA.Common.DTO.Models.Demande demande);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutRejeteeList", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutRejeteeListResponse")]
-        void ChangerStatutRejeteeList(AGA.DTO.Models.Demande[] demandesList);
+        void ChangerStatutRejeteeList(AGA.Common.DTO.Models.Demande[] demandesList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/ChangerStatutRejeteeList", ReplyAction="http://tempuri.org/ITraiterDemande/ChangerStatutRejeteeListResponse")]
-        System.Threading.Tasks.Task ChangerStatutRejeteeListAsync(AGA.DTO.Models.Demande[] demandesList);
+        System.Threading.Tasks.Task ChangerStatutRejeteeListAsync(AGA.Common.DTO.Models.Demande[] demandesList);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -109,11 +109,11 @@ namespace AGASQLI.ServiceDemande {
                 base(binding, remoteAddress) {
         }
         
-        public AGA.DTO.Models.Demande[] GetDemandesEnAttenteList() {
+        public AGA.Common.DTO.Models.Demande[] GetDemandesEnAttenteList() {
             return base.Channel.GetDemandesEnAttenteList();
         }
         
-        public System.Threading.Tasks.Task<AGA.DTO.Models.Demande[]> GetDemandesEnAttenteListAsync() {
+        public System.Threading.Tasks.Task<AGA.Common.DTO.Models.Demande[]> GetDemandesEnAttenteListAsync() {
             return base.Channel.GetDemandesEnAttenteListAsync();
         }
         
@@ -125,75 +125,75 @@ namespace AGASQLI.ServiceDemande {
             return base.Channel.GetNombreDemandesEnAttenteAsync();
         }
         
-        public AGA.DTO.Models.Demande[] GetDemandesListParCollaborateur(int idCollaborateur) {
+        public AGA.Common.DTO.Models.Demande[] GetDemandesListParCollaborateur(int idCollaborateur) {
             return base.Channel.GetDemandesListParCollaborateur(idCollaborateur);
         }
         
-        public System.Threading.Tasks.Task<AGA.DTO.Models.Demande[]> GetDemandesListParCollaborateurAsync(int idCollaborateur) {
+        public System.Threading.Tasks.Task<AGA.Common.DTO.Models.Demande[]> GetDemandesListParCollaborateurAsync(int idCollaborateur) {
             return base.Channel.GetDemandesListParCollaborateurAsync(idCollaborateur);
         }
         
-        public AGA.DTO.Models.Demande[] GetDemandesEnCoursParAssistante(int idAssistante) {
+        public AGA.Common.DTO.Models.Demande[] GetDemandesEnCoursParAssistante(int idAssistante) {
             return base.Channel.GetDemandesEnCoursParAssistante(idAssistante);
         }
         
-        public System.Threading.Tasks.Task<AGA.DTO.Models.Demande[]> GetDemandesEnCoursParAssistanteAsync(int idAssistante) {
+        public System.Threading.Tasks.Task<AGA.Common.DTO.Models.Demande[]> GetDemandesEnCoursParAssistanteAsync(int idAssistante) {
             return base.Channel.GetDemandesEnCoursParAssistanteAsync(idAssistante);
         }
         
-        public void AjouterDemandesListAssistante(AGA.DTO.Models.Demande[] demandesList, int idAssistante) {
+        public void AjouterDemandesListAssistante(AGA.Common.DTO.Models.Demande[] demandesList, int idAssistante) {
             base.Channel.AjouterDemandesListAssistante(demandesList, idAssistante);
         }
         
-        public System.Threading.Tasks.Task AjouterDemandesListAssistanteAsync(AGA.DTO.Models.Demande[] demandesList, int idAssistante) {
+        public System.Threading.Tasks.Task AjouterDemandesListAssistanteAsync(AGA.Common.DTO.Models.Demande[] demandesList, int idAssistante) {
             return base.Channel.AjouterDemandesListAssistanteAsync(demandesList, idAssistante);
         }
         
-        public void ChangerStatutEnCours(AGA.DTO.Models.Demande demande) {
+        public void ChangerStatutEnCours(AGA.Common.DTO.Models.Demande demande) {
             base.Channel.ChangerStatutEnCours(demande);
         }
         
-        public System.Threading.Tasks.Task ChangerStatutEnCoursAsync(AGA.DTO.Models.Demande demande) {
+        public System.Threading.Tasks.Task ChangerStatutEnCoursAsync(AGA.Common.DTO.Models.Demande demande) {
             return base.Channel.ChangerStatutEnCoursAsync(demande);
         }
         
-        public void ChangerStatutEnCoursList(AGA.DTO.Models.Demande[] demandesList) {
+        public void ChangerStatutEnCoursList(AGA.Common.DTO.Models.Demande[] demandesList) {
             base.Channel.ChangerStatutEnCoursList(demandesList);
         }
         
-        public System.Threading.Tasks.Task ChangerStatutEnCoursListAsync(AGA.DTO.Models.Demande[] demandesList) {
+        public System.Threading.Tasks.Task ChangerStatutEnCoursListAsync(AGA.Common.DTO.Models.Demande[] demandesList) {
             return base.Channel.ChangerStatutEnCoursListAsync(demandesList);
         }
         
-        public void ChangerStatutPrete(AGA.DTO.Models.Demande demande) {
+        public void ChangerStatutPrete(AGA.Common.DTO.Models.Demande demande) {
             base.Channel.ChangerStatutPrete(demande);
         }
         
-        public System.Threading.Tasks.Task ChangerStatutPreteAsync(AGA.DTO.Models.Demande demande) {
+        public System.Threading.Tasks.Task ChangerStatutPreteAsync(AGA.Common.DTO.Models.Demande demande) {
             return base.Channel.ChangerStatutPreteAsync(demande);
         }
         
-        public void ChangerStatutPreteList(AGA.DTO.Models.Demande[] demandesList) {
+        public void ChangerStatutPreteList(AGA.Common.DTO.Models.Demande[] demandesList) {
             base.Channel.ChangerStatutPreteList(demandesList);
         }
         
-        public System.Threading.Tasks.Task ChangerStatutPreteListAsync(AGA.DTO.Models.Demande[] demandesList) {
+        public System.Threading.Tasks.Task ChangerStatutPreteListAsync(AGA.Common.DTO.Models.Demande[] demandesList) {
             return base.Channel.ChangerStatutPreteListAsync(demandesList);
         }
         
-        public void ChangerStatutRejetee(AGA.DTO.Models.Demande demande) {
+        public void ChangerStatutRejetee(AGA.Common.DTO.Models.Demande demande) {
             base.Channel.ChangerStatutRejetee(demande);
         }
         
-        public System.Threading.Tasks.Task ChangerStatutRejeteeAsync(AGA.DTO.Models.Demande demande) {
+        public System.Threading.Tasks.Task ChangerStatutRejeteeAsync(AGA.Common.DTO.Models.Demande demande) {
             return base.Channel.ChangerStatutRejeteeAsync(demande);
         }
         
-        public void ChangerStatutRejeteeList(AGA.DTO.Models.Demande[] demandesList) {
+        public void ChangerStatutRejeteeList(AGA.Common.DTO.Models.Demande[] demandesList) {
             base.Channel.ChangerStatutRejeteeList(demandesList);
         }
         
-        public System.Threading.Tasks.Task ChangerStatutRejeteeListAsync(AGA.DTO.Models.Demande[] demandesList) {
+        public System.Threading.Tasks.Task ChangerStatutRejeteeListAsync(AGA.Common.DTO.Models.Demande[] demandesList) {
             return base.Channel.ChangerStatutRejeteeListAsync(demandesList);
         }
     }

@@ -20,6 +20,7 @@ namespace AGA.DTO.Mapping
         public static AutorisationCoursVacation EntityToDto(Data.AutorisationCoursVacation autorisationCoursVacation)
         {
             AutorisationCoursVacation autorisationCoursVacationDto = new AutorisationCoursVacation();
+
             if (autorisationCoursVacation != null)
             {
                 autorisationCoursVacationDto.AnneeScolaire = autorisationCoursVacation.AnneeScolaire;
@@ -27,6 +28,7 @@ namespace AGA.DTO.Mapping
                 autorisationCoursVacationDto.Id = autorisationCoursVacation.Id;
                 autorisationCoursVacationDto.Demande = DemandeMapping.EntityToDto(autorisationCoursVacation.Demande);
             }
+
             return autorisationCoursVacationDto;
         }
     }

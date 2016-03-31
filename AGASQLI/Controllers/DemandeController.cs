@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AGASQLI.ServiceDemande;
-using AGA.DTO.Models;
+using AGA.Common.DTO.Models;
 using AGASQLI.ViewModels;
 using Microsoft.Practices.Unity;
 
@@ -60,6 +60,15 @@ namespace AGASQLI.Controllers
             return RedirectToAction("EnAttente");
         }
 
+        /// <summary>
+        /// Affiche la liste des tâches en cours de l'assistante connectée
+        /// </summary>
+        /// <returns></returns>
+        //TODO : remplacer le bouchon "4" par l'ID de l'assitante connectée
+        public ActionResult MesTaches()
+        {
+            return View(demandeService.GetDemandesEnCoursParAssistante(4));
+        }
         //// GET: Demandes/Details/5
         //public ActionResult Details(int? id)
         //{

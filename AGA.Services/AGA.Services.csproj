@@ -76,27 +76,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Attestation.cs" />
-    <Compile Include="Entities\AttestationIrrevocableSalaire.cs" />
-    <Compile Include="Entities\AttestationSalaire.cs" />
-    <Compile Include="Entities\AttestationStage.cs" />
-    <Compile Include="Entities\AttestationTravail.cs" />
-    <Compile Include="Entities\ReponseLettreDemission.cs" />
-    <Compile Include="INotification.cs" />
-    <Compile Include="ITraiterAttestation.cs" />
-    <Compile Include="ITraiterCollaborateur.cs" />
-    <Compile Include="ITraiterDemande.cs" />
+    <Compile Include="Interfaces\INotification.cs" />
+    <Compile Include="Interfaces\ITraiterAttestation.cs" />
+    <Compile Include="Interfaces\ITraiterCollaborateur.cs" />
+    <Compile Include="Interfaces\ITraiterDemande.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AGA.Dto\AGA.DTO.csproj">
-      <Project>{3fb72c65-3dc1-439f-9878-b74cc511b84e}</Project>
-      <Name>AGA.DTO</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\AGA.Common\AGA.Common.csproj">
+      <Project>{b82aa5ee-a205-4f53-ba6e-bc9f5cd2a28c}</Project>
+      <Name>AGA.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

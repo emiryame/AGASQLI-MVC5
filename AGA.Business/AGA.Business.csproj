@@ -94,19 +94,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Notification.cs" />
-    <Compile Include="TraiterAttestation.cs" />
-    <Compile Include="TraiterCollaborateur.cs" />
-    <Compile Include="TraiterDemande.cs" />
+    <Compile Include="Implementations\Notification.cs" />
+    <Compile Include="Implementations\TraiterAttestation.cs" />
+    <Compile Include="Implementations\TraiterCollaborateur.cs" />
+    <Compile Include="Implementations\TraiterDemande.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AGA.Data\AGA.Data.csproj">
-      <Project>{dd4033de-110f-48ad-937a-7a8d67d0ded2}</Project>
-      <Name>AGA.Data</Name>
+    <ProjectReference Include="..\AGA.Common\AGA.Common.csproj">
+      <Project>{b82aa5ee-a205-4f53-ba6e-bc9f5cd2a28c}</Project>
+      <Name>AGA.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AGA.Dto\AGA.DTO.csproj">
-      <Project>{3fb72c65-3dc1-439f-9878-b74cc511b84e}</Project>
-      <Name>AGA.DTO</Name>
+    <ProjectReference Include="..\AGA.Data\AGA.DAL.csproj">
+      <Project>{dd4033de-110f-48ad-937a-7a8d67d0ded2}</Project>
+      <Name>AGA.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\AGA.Services\AGA.Services.csproj">
       <Project>{89f86ff7-7bfb-475b-adea-c56f5995a87b}</Project>

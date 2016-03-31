@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" />
+  <xs:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+  <xs:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/AGA.Common.Entities" />
+  <xs:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Microsoft.AspNet.Http" />
+  <xs:element name="GenererAttestationConge">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="attestationConge" nillable="true" type="q1:AttestationConge" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAttestationCongeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="GenererAttestationCongeResult" nillable="true" type="q2:MemoryStream" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAttestationIrrevocableSalaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AGA.Common.Entities" minOccurs="0" name="attestationIrrevocableSalaire" nillable="true" type="q3:AttestationIrrevocableSalaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAttestationIrrevocableSalaireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="GenererAttestationIrrevocableSalaireResult" nillable="true" type="q4:MemoryStream" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAttestationSalaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AGA.Common.Entities" minOccurs="0" name="attestationSalaire" nillable="true" type="q5:AttestationSalaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAttestationSalaireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="GenererAttestationSalaireResult" nillable="true" type="q6:MemoryStream" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAttestationStage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AGA.Common.Entities" minOccurs="0" name="attestationStage" nillable="true" type="q7:AttestationStage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAttestationStageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="GenererAttestationStageResult" nillable="true" type="q8:MemoryStream" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAttestationTravail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AGA.Common.Entities" minOccurs="0" name="attestationTravail" nillable="true" type="q9:AttestationTravail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAttestationTravailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="GenererAttestationTravailResult" nillable="true" type="q10:MemoryStream" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAutorisationCoursVacation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="autorisationCoursVacation" nillable="true" type="q11:AutorisationCoursVacation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererAutorisationCoursVacationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="GenererAutorisationCoursVacationResult" nillable="true" type="q12:MemoryStream" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenrerAutorisationPoursuiteEtudes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="autorisationPoursuiteEtudes" nillable="true" type="q13:AutorisationPoursuiteEtudes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenrerAutorisationPoursuiteEtudesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="GenrerAutorisationPoursuiteEtudesResult" nillable="true" type="q14:MemoryStream" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererReponseLettreDemission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AGA.Common.Entities" minOccurs="0" name="reponseLettreDemission" nillable="true" type="q15:ReponseLettreDemission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenererReponseLettreDemissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="GenererReponseLettreDemissionResult" nillable="true" type="q16:MemoryStream" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Telecharger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.AspNet.Http" minOccurs="0" name="Response" nillable="true" type="q17:HttpResponse" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="documentStream" nillable="true" type="q18:MemoryStream" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TelechargerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

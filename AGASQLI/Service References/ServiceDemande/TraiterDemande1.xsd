@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:14058/TraiterDemande.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" />
+  <xs:import schemaLocation="http://localhost:14058/TraiterDemande.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" />
   <xs:element name="GetDemandesEnAttenteList">
     <xs:complexType>
       <xs:sequence />
@@ -9,7 +9,7 @@
   <xs:element name="GetDemandesEnAttenteListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="GetDemandesEnAttenteListResult" nillable="true" type="q1:ArrayOfDemande" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="GetDemandesEnAttenteListResult" nillable="true" type="q1:ArrayOfDemande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -35,7 +35,7 @@
   <xs:element name="GetDemandesListParCollaborateurResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="GetDemandesListParCollaborateurResult" nillable="true" type="q2:ArrayOfDemande" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="GetDemandesListParCollaborateurResult" nillable="true" type="q2:ArrayOfDemande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,14 +49,14 @@
   <xs:element name="GetDemandesEnCoursParAssistanteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="GetDemandesEnCoursParAssistanteResult" nillable="true" type="q3:ArrayOfDemande" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="GetDemandesEnCoursParAssistanteResult" nillable="true" type="q3:ArrayOfDemande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AjouterDemandesListAssistante">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q4:ArrayOfDemande" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q4:ArrayOfDemande" />
         <xs:element minOccurs="0" name="idAssistante" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -69,7 +69,7 @@
   <xs:element name="ChangerStatutEnCours">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q5:Demande" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q5:Demande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -81,7 +81,7 @@
   <xs:element name="ChangerStatutEnCoursList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q6:ArrayOfDemande" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q6:ArrayOfDemande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -93,7 +93,7 @@
   <xs:element name="ChangerStatutPrete">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q7:Demande" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q7:Demande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -105,7 +105,7 @@
   <xs:element name="ChangerStatutPreteList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q8:ArrayOfDemande" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q8:ArrayOfDemande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -117,7 +117,7 @@
   <xs:element name="ChangerStatutRejetee">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q9:Demande" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q9:Demande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -129,7 +129,7 @@
   <xs:element name="ChangerStatutRejeteeList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q10:ArrayOfDemande" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q10:ArrayOfDemande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

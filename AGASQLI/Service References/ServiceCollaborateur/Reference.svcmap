@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cde56076-f4e3-4f3a-91b0-58ff94ccfddd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:14058/TraiterCollaborateur.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TraiterCollaborateur.xsd" MetadataType="Schema" ID="31363a20-ff4a-43db-b3cd-73b362b432f6" SourceId="1" SourceUrl="http://localhost:14058/TraiterCollaborateur.svc?xsd=xsd1" />
+    <MetadataFile FileName="TraiterCollaborateur.disco" MetadataType="Disco" ID="ba758060-5555-44ca-8db9-05a7b901c7fd" SourceId="1" SourceUrl="http://localhost:14058/TraiterCollaborateur.svc?disco" />
+    <MetadataFile FileName="TraiterCollaborateur1.xsd" MetadataType="Schema" ID="174e76f0-d579-4b48-bc66-12e04e0df624" SourceId="1" SourceUrl="http://localhost:14058/TraiterCollaborateur.svc?xsd=xsd4" />
+    <MetadataFile FileName="TraiterCollaborateur2.xsd" MetadataType="Schema" ID="62e5ef33-66fd-456b-b4b5-82885f029185" SourceId="1" SourceUrl="http://localhost:14058/TraiterCollaborateur.svc?xsd=xsd2" />
+    <MetadataFile FileName="TraiterCollaborateur3.xsd" MetadataType="Schema" ID="a98f0d5b-2b17-4414-8497-f38fd91b797d" SourceId="1" SourceUrl="http://localhost:14058/TraiterCollaborateur.svc?xsd=xsd0" />
+    <MetadataFile FileName="TraiterCollaborateur.wsdl" MetadataType="Wsdl" ID="81602d45-6beb-4014-9c73-827d3dbc6476" SourceId="1" SourceUrl="http://localhost:14058/TraiterCollaborateur.svc?wsdl" />
+    <MetadataFile FileName="TraiterCollaborateur4.xsd" MetadataType="Schema" ID="b1c7974e-da63-47ec-8024-5a3865bd0c63" SourceId="1" SourceUrl="http://localhost:14058/TraiterCollaborateur.svc?xsd=xsd5" />
+    <MetadataFile FileName="TraiterCollaborateur5.xsd" MetadataType="Schema" ID="565b64a6-190f-4684-8da9-6c6e3283b3d0" SourceId="1" SourceUrl="http://localhost:14058/TraiterCollaborateur.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

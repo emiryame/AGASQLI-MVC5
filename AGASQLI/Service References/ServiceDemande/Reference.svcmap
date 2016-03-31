@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="afe9f57c-5143-493b-a025-0a9d42bc4651" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="add15061-ddc6-4ecc-8795-2c0e09661972" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:14058/TraiterDemande.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TraiterDemande.xsd" MetadataType="Schema" ID="8506a5c2-09c3-4521-b33f-ac25510ee87e" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?xsd=xsd1" />
-    <MetadataFile FileName="TraiterDemande.wsdl" MetadataType="Wsdl" ID="2c1b79bd-1507-4a88-964e-22a96839c551" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?wsdl" />
-    <MetadataFile FileName="TraiterDemande1.xsd" MetadataType="Schema" ID="be745a98-efb1-44a2-b094-dc1fe04bb64f" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?xsd=xsd0" />
-    <MetadataFile FileName="TraiterDemande.disco" MetadataType="Disco" ID="2ca28c81-df26-452f-a04f-bed871b6dbcc" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?disco" />
-    <MetadataFile FileName="TraiterDemande2.xsd" MetadataType="Schema" ID="e05daf21-1404-492d-8418-ff0dbc519b7c" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?xsd=xsd2" />
+    <MetadataFile FileName="TraiterDemande.xsd" MetadataType="Schema" ID="75ad3d11-2ee0-482b-b43c-e2fefe20923a" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?xsd=xsd1" />
+    <MetadataFile FileName="TraiterDemande.wsdl" MetadataType="Wsdl" ID="23ba2e6c-c352-437a-8998-465b94c271a2" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?wsdl" />
+    <MetadataFile FileName="TraiterDemande1.xsd" MetadataType="Schema" ID="75e54774-c10a-4bb1-aab8-beff80f00eaa" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?xsd=xsd0" />
+    <MetadataFile FileName="TraiterDemande.disco" MetadataType="Disco" ID="1ebe68b0-fcdd-49a3-b351-f13a548426ae" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?disco" />
+    <MetadataFile FileName="TraiterDemande2.xsd" MetadataType="Schema" ID="f3838769-b300-4f88-b44e-9b811592b8f2" SourceId="1" SourceUrl="http://localhost:14058/TraiterDemande.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

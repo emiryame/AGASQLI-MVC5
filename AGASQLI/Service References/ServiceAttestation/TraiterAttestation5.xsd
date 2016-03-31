@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AttestationConge">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateDebut" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Demande" nillable="true" type="tns:Demande" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttestationConge" nillable="true" type="tns:AttestationConge" />
+  <xs:complexType name="Demande">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Assistante" nillable="true" type="tns:Collaborateur" />
+      <xs:element minOccurs="0" name="Collaborateur" nillable="true" type="tns:Collaborateur" />
+      <xs:element minOccurs="0" name="DateCreation" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateDebutTraitement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFinTraitement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Statut" nillable="true" type="tns:Statut" />
+      <xs:element minOccurs="0" name="TypeAttestation" nillable="true" type="tns:TypeAttestation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Demande" nillable="true" type="tns:Demande" />
+  <xs:complexType name="Collaborateur">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Banque" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Civilite" nillable="true" type="tns:Civilite" />
+      <xs:element minOccurs="0" name="Cnss" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebutTravail" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEligible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Poste" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prenom" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Collaborateur" nillable="true" type="tns:Collaborateur" />
+  <xs:complexType name="Civilite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Civilite" nillable="true" type="tns:Civilite" />
+  <xs:complexType name="Statut">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MailTemplate" nillable="true" type="tns:MailTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Statut" nillable="true" type="tns:Statut" />
+  <xs:complexType name="MailTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contenu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Objet" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MailTemplate" nillable="true" type="tns:MailTemplate" />
+  <xs:complexType name="TypeAttestation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Template" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TypeAttestation" nillable="true" type="tns:TypeAttestation" />
+  <xs:complexType name="Stagiaire">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Civilite" nillable="true" type="tns:Civilite" />
+      <xs:element minOccurs="0" name="DateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prenom" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Stagiaire" nillable="true" type="tns:Stagiaire" />
+  <xs:complexType name="AutorisationCoursVacation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnneeScolaire" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Demande" nillable="true" type="tns:Demande" />
+      <xs:element minOccurs="0" name="Etablissement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutorisationCoursVacation" nillable="true" type="tns:AutorisationCoursVacation" />
+  <xs:complexType name="AutorisationPoursuiteEtudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnneeScolaire" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Demande" nillable="true" type="tns:Demande" />
+      <xs:element minOccurs="0" name="Etablissement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutorisationPoursuiteEtudes" nillable="true" type="tns:AutorisationPoursuiteEtudes" />
+</xs:schema>

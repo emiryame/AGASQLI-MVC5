@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TraiterAttestation" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" />
+      <xsd:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+      <xsd:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/AGA.Common.Entities" />
+      <xsd:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Microsoft.AspNet.Http" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationConge_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationConge" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationConge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationCongeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationIrrevocableSalaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationIrrevocableSalaire" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationIrrevocableSalaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationIrrevocableSalaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationSalaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationSalaire" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationSalaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationSalaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationStage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationStage" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationStage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationStageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationTravail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationTravail" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAttestationTravail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAttestationTravailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAutorisationCoursVacation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAutorisationCoursVacation" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererAutorisationCoursVacation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenererAutorisationCoursVacationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenrerAutorisationPoursuiteEtudes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenrerAutorisationPoursuiteEtudes" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenrerAutorisationPoursuiteEtudes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenrerAutorisationPoursuiteEtudesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererReponseLettreDemission_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenererReponseLettreDemission" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_GenererReponseLettreDemission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenererReponseLettreDemissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_Telecharger_InputMessage">
+    <wsdl:part name="parameters" element="tns:Telecharger" />
+  </wsdl:message>
+  <wsdl:message name="ITraiterAttestation_Telecharger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelechargerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITraiterAttestation">
+    <wsdl:operation name="GenererAttestationConge">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationConge" message="tns:ITraiterAttestation_GenererAttestationConge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationCongeResponse" message="tns:ITraiterAttestation_GenererAttestationConge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenererAttestationIrrevocableSalaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationIrrevocableSalaire" message="tns:ITraiterAttestation_GenererAttestationIrrevocableSalaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationIrrevocableSalaireResponse" message="tns:ITraiterAttestation_GenererAttestationIrrevocableSalaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenererAttestationSalaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationSalaire" message="tns:ITraiterAttestation_GenererAttestationSalaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationSalaireResponse" message="tns:ITraiterAttestation_GenererAttestationSalaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenererAttestationStage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationStage" message="tns:ITraiterAttestation_GenererAttestationStage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationStageResponse" message="tns:ITraiterAttestation_GenererAttestationStage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenererAttestationTravail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationTravail" message="tns:ITraiterAttestation_GenererAttestationTravail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAttestationTravailResponse" message="tns:ITraiterAttestation_GenererAttestationTravail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenererAutorisationCoursVacation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAutorisationCoursVacation" message="tns:ITraiterAttestation_GenererAutorisationCoursVacation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererAutorisationCoursVacationResponse" message="tns:ITraiterAttestation_GenererAutorisationCoursVacation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenrerAutorisationPoursuiteEtudes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraiterAttestation/GenrerAutorisationPoursuiteEtudes" message="tns:ITraiterAttestation_GenrerAutorisationPoursuiteEtudes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraiterAttestation/GenrerAutorisationPoursuiteEtudesResponse" message="tns:ITraiterAttestation_GenrerAutorisationPoursuiteEtudes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenererReponseLettreDemission">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererReponseLettreDemission" message="tns:ITraiterAttestation_GenererReponseLettreDemission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraiterAttestation/GenererReponseLettreDemissionResponse" message="tns:ITraiterAttestation_GenererReponseLettreDemission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Telecharger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraiterAttestation/Telecharger" message="tns:ITraiterAttestation_Telecharger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraiterAttestation/TelechargerResponse" message="tns:ITraiterAttestation_Telecharger_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITraiterAttestation" type="tns:ITraiterAttestation">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenererAttestationConge">
+      <soap:operation soapAction="http://tempuri.org/ITraiterAttestation/GenererAttestationConge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenererAttestationIrrevocableSalaire">
+      <soap:operation soapAction="http://tempuri.org/ITraiterAttestation/GenererAttestationIrrevocableSalaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenererAttestationSalaire">
+      <soap:operation soapAction="http://tempuri.org/ITraiterAttestation/GenererAttestationSalaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenererAttestationStage">
+      <soap:operation soapAction="http://tempuri.org/ITraiterAttestation/GenererAttestationStage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenererAttestationTravail">
+      <soap:operation soapAction="http://tempuri.org/ITraiterAttestation/GenererAttestationTravail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenererAutorisationCoursVacation">
+      <soap:operation soapAction="http://tempuri.org/ITraiterAttestation/GenererAutorisationCoursVacation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenrerAutorisationPoursuiteEtudes">
+      <soap:operation soapAction="http://tempuri.org/ITraiterAttestation/GenrerAutorisationPoursuiteEtudes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenererReponseLettreDemission">
+      <soap:operation soapAction="http://tempuri.org/ITraiterAttestation/GenererReponseLettreDemission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Telecharger">
+      <soap:operation soapAction="http://tempuri.org/ITraiterAttestation/Telecharger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TraiterAttestation">
+    <wsdl:port name="BasicHttpBinding_ITraiterAttestation" binding="tns:BasicHttpBinding_ITraiterAttestation">
+      <soap:address location="http://localhost:14058/TraiterAttestation.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

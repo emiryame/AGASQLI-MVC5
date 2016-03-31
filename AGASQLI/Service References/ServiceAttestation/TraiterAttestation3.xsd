@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AGA.Common.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AGA.Common.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:14058/TraiterAttestation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" />
+  <xs:complexType name="AttestationIrrevocableSalaire">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Attestation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateRemiseMainLibre" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NumeroCompte" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttestationIrrevocableSalaire" nillable="true" type="tns:AttestationIrrevocableSalaire" />
+  <xs:complexType name="Attestation">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="Collaborateur" nillable="true" type="q1:Collaborateur" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attestation" nillable="true" type="tns:Attestation" />
+  <xs:complexType name="AttestationSalaire">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Attestation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Salaire" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttestationSalaire" nillable="true" type="tns:AttestationSalaire" />
+  <xs:complexType name="AttestationStage">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="Stagiaire" nillable="true" type="q2:Stagiaire" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttestationStage" nillable="true" type="tns:AttestationStage" />
+  <xs:complexType name="AttestationTravail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Attestation">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttestationTravail" nillable="true" type="tns:AttestationTravail" />
+  <xs:complexType name="ReponseLettreDemission">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Attestation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateFinContrat" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateReceptionDemande" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReponseLettreDemission" nillable="true" type="tns:ReponseLettreDemission" />
+</xs:schema>

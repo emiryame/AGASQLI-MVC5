@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="AGA.Business.TraiterDemande" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AGA.Business.Implementations.TraiterDemande" %>

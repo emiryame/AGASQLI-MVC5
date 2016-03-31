@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AGA.Data
+namespace AGA.DAL
 {
     /// <summary>
     /// Remplir AGADataBase avec un jeu de données 

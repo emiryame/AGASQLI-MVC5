@@ -68,9 +68,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\AGA.Data\AGA.Data.csproj">
+    <ProjectReference Include="..\AGA.Data\AGA.DAL.csproj">
       <Project>{dd4033de-110f-48ad-937a-7a8d67d0ded2}</Project>
-      <Name>AGA.Data</Name>
+      <Name>AGA.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
