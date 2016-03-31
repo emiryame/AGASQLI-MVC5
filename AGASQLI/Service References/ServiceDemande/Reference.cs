@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AGASQLI.ServicesDemande {
+namespace AGASQLI.ServiceDemande {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicesDemande.ITraiterDemande")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceDemande.ITraiterDemande")]
     public interface ITraiterDemande {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITraiterDemande/GetDemandesEnAttenteList", ReplyAction="http://tempuri.org/ITraiterDemande/GetDemandesEnAttenteListResponse")]
@@ -83,12 +83,12 @@ namespace AGASQLI.ServicesDemande {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITraiterDemandeChannel : AGASQLI.ServicesDemande.ITraiterDemande, System.ServiceModel.IClientChannel {
+    public interface ITraiterDemandeChannel : AGASQLI.ServiceDemande.ITraiterDemande, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TraiterDemandeClient : System.ServiceModel.ClientBase<AGASQLI.ServicesDemande.ITraiterDemande>, AGASQLI.ServicesDemande.ITraiterDemande {
+    public partial class TraiterDemandeClient : System.ServiceModel.ClientBase<AGASQLI.ServiceDemande.ITraiterDemande>, AGASQLI.ServiceDemande.ITraiterDemande {
         
         public TraiterDemandeClient() {
         }

@@ -244,7 +244,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Service References\ServicesDemande\Reference.cs">
+    <Compile Include="Service References\ServiceDemande\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -323,10 +323,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Properties\DataSources\AGA.DTO.Models.Demande.datasource" />
-    <None Include="Service References\ServicesDemande\TraiterDemande.disco" />
-    <None Include="Service References\ServicesDemande\configuration91.svcinfo" />
-    <None Include="Service References\ServicesDemande\configuration.svcinfo" />
-    <None Include="Service References\ServicesDemande\Reference.svcmap">
+    <Content Include="Properties\DataSources\AGA.DTO.Models.Collaborateur.datasource" />
+    <Content Include="Properties\DataSources\AGA.DTO.Models.Stagiaire.datasource" />
+    <None Include="Service References\ServiceDemande\TraiterDemande.disco" />
+    <None Include="Service References\ServiceDemande\configuration91.svcinfo" />
+    <None Include="Service References\ServiceDemande\configuration.svcinfo" />
+    <None Include="Service References\ServiceDemande\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -370,14 +372,14 @@
     <Content Include="Views\Demande\Details.cshtml" />
     <Content Include="Views\Demande\Edit.cshtml" />
     <Content Include="Views\Demande\EnAttente.cshtml" />
-    <None Include="Service References\ServicesDemande\TraiterDemande.wsdl" />
-    <None Include="Service References\ServicesDemande\TraiterDemande.xsd">
+    <None Include="Service References\ServiceDemande\TraiterDemande.wsdl" />
+    <None Include="Service References\ServiceDemande\TraiterDemande.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServicesDemande\TraiterDemande1.xsd">
+    <None Include="Service References\ServiceDemande\TraiterDemande1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServicesDemande\TraiterDemande2.xsd">
+    <None Include="Service References\ServiceDemande\TraiterDemande2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -399,9 +401,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServicesDemande\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AGA.Dto\AGA.DTO.csproj">
       <Project>{3fb72c65-3dc1-439f-9878-b74cc511b84e}</Project>
       <Name>AGA.DTO</Name>
@@ -410,6 +409,9 @@
       <Project>{89f86ff7-7bfb-475b-adea-c56f5995a87b}</Project>
       <Name>AGA.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceDemande\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

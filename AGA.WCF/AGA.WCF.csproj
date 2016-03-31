@@ -125,13 +125,22 @@
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="TraiterAttestation.svc" />
     <Content Include="TraiterCollaborateur.svc" />
-    <Content Include="Web.config" />
     <Content Include="TraiterDemande.svc" />
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AGA.Business\AGA.Business.csproj">
+      <Project>{eb9c463f-fd9b-45d7-be87-57f68cab801b}</Project>
+      <Name>AGA.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AGA.Services\AGA.Services.csproj">
+      <Project>{89f86ff7-7bfb-475b-adea-c56f5995a87b}</Project>
+      <Name>AGA.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">

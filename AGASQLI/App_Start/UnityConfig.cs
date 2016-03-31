@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
-using AGASQLI.ServicesDemande;
+using AGASQLI.ServiceDemande;
 
 namespace AGASQLI.App_Start
 {
