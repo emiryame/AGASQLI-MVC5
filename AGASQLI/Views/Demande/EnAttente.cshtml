@@ -1,11 +1,11 @@
-﻿@model IEnumerable<AGASQLI.ViewModels.DemandeViewModel>
+﻿@model IList<AGASQLI.ViewModels.DemandeViewModel>
 @{
 }
 <span class="sec-icon fa fa-users"></span>
 <div class="hs-inner">
     <span class="before-title">Liste des demandes en attente</span>
     <br />
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("EnAttente", "Demande"))
     {
         <table id="id=" bootstrap-table" class="table table-striped table-bordered" cellspacing="0">
             <tr>
@@ -33,45 +33,44 @@
                 <th></th>
             </tr>
 
-            @foreach (var item in Model)
+            @for (int i = 0; i < Model.Count; i++)
             {
                 <tr>
                     <td>
-                        @Html.CheckBoxFor(modelItem => item.IsChecked)
+                        @Html.CheckBoxFor(model => model[i].IsChecked)
+                        @Html.HiddenFor(model => model[i].Demande.Id)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Demande.Collaborateur.Nom)
+                        @Html.DisplayFor(model => model[i].Demande.Collaborateur.Nom)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Demande.Collaborateur.Prenom)
+                        @Html.DisplayFor(model => model[i].Demande.Collaborateur.Prenom)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Demande.DateCreation)
+                        @Html.DisplayFor(model => model[i].Demande.DateCreation)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Demande.TypeAttestation.Label)
+                        @Html.DisplayFor(model => model[i].Demande.TypeAttestation.Label)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Demande.DateDebutTraitement)
+                        @Html.DisplayFor(model => model[i].Demande.DateDebutTraitement)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Demande.Statut.Label)
+                        @Html.DisplayFor(model => model[i].Demande.Statut.Label)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Demande.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Demande.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Demande.Id })
+                        @Html.ActionLink("Edit", "Edit", new { id = Model[i].Demande.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = Model[i].Demande.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = Model[i].Demande.Id })
                     </td>
                 </tr>
-
             }
         </table>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Ajouter à mes tâches" class="btn btn-success" style="border-color:#b39964; background:#b39964; float:right;">
             </div>
         </div>
     }
-    <button type="button" class="btn btn-success" style="border-color:#b39964; background:#b39964; float:right;"><i class="fa fa-plus"></i>Ajouter à mes tâches</button>
-   
 
+</div>

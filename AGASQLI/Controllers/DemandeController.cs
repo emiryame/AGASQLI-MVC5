@@ -6,44 +6,58 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using AGA.Services;
+using AGASQLI.ServicesDemande;
 using AGA.Business;
 using AGA.DTO.Models;
 using AGASQLI.ViewModels;
+using Microsoft.Practices.Unity;
 
 namespace AGASQLI.Controllers
 {
     public class DemandeController : Controller
     {
-        private AGA.Data.AGADataBaseContainer db = new AGA.Data.AGADataBaseContainer();
+        [Dependency]
+        public ITraiterDemande demandeService { get; set; }
 
-        // GET: Demandes
-        //TODO: A netoyer..
+        /// <summary>
+        /// Afficher la liste des demandes en attente de traitement
+        /// </summary>
+        /// <returns>la vue de la rubrique EnAttente</returns>
         public ActionResult EnAttente()
         {
-            AGASQLI.Services.TraiterDemandeClient demandeService = new AGASQLI.Services.TraiterDemandeClient();
-            //ITraiterDemande demandeService = new TraiterDemande();
             List<Demande> demandesList = new List<Demande>();
             demandesList = demandeService.GetDemandesEnAttenteList().ToList();
 
             List<DemandeViewModel> demandesViewModelList = new List<DemandeViewModel>();
-            demandesList.ForEach(d => demandesViewModelList.Add(new DemandeViewModel(d)));
-            demandeService.Close();
+            if (demandesList != null)
+                demandesList.ForEach(d => demandesViewModelList.Add(new DemandeViewModel(d)));
 
             return View(demandesViewModelList);
         }
 
+        /// <summary>
+        /// Ajoute la liste des demandes selectionnées à la liste des taches de l'assitante connectée
+        /// </summary>
+        /// <param name="demandesViewModelList">La liste des demandes à ajouter</param>
+        /// <returns>la vue des demandes en attente</returns>
+        //TODO: Bouchon ID Assistante!
         [HttpPost]
         public ActionResult EnAttente(List<DemandeViewModel> demandesViewModelList)
         {
-            //List<DemandeViewModel> demandesViewModelCheckedList = new List<DemandeViewModel>();
-            //demandesViewModelCheckedList=demandesViewModelList.Where(d => d.IsChecked == false).ToList();
-            //List<Demande> demandesList = new List<Demande>();
-            //if(demandesList!=null)
-            //    demandesViewModelCheckedList.ForEach(d => demandesList.Add(d.Demande));
+            //Recupérer la liste des demandes selectionnées.
+            List<DemandeViewModel> demandesViewModelCheckedList = new List<DemandeViewModel>();
+            if (demandesViewModelList != null)
+            {
+                demandesViewModelCheckedList = demandesViewModelList.Where(d => d.IsChecked == true).ToList();
+            }
 
-            //ITraiterDemande demandeService = new TraiterDemande();
-            //demandeService.AjouterDemandesListAssistante(demandesList, 4);
+            List<Demande> demandesList = new List<Demande>();
+            demandesViewModelCheckedList.ForEach(d => demandesList.Add(d.Demande));
+
+            //Affecter la liste des demandes à l'assitante en question
+            demandeService.AjouterDemandesListAssistante(demandesList.ToArray(), 4);
+            demandeService.ChangerStatutEnCoursList(demandesList.ToArray());
+
             return RedirectToAction("EnAttente");
         }
 
@@ -146,7 +160,7 @@ namespace AGASQLI.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }

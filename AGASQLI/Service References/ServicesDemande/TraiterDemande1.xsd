@@ -78,10 +78,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="ChangerStatutEnCoursList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q6:ArrayOfDemande" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangerStatutEnCoursListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ChangerStatutPrete">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q6:Demande" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q7:Demande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -90,14 +102,38 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="ChangerStatutPreteList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q8:ArrayOfDemande" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangerStatutPreteListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ChangerStatutRejetee">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q7:Demande" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q9:Demande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ChangerStatutRejeteeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangerStatutRejeteeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/AGA.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q10:ArrayOfDemande" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangerStatutRejeteeListResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

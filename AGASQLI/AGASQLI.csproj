@@ -90,6 +90,26 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59d6d24383174ac4, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocation.1.0.0\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.4.0.1\lib\net45\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -144,6 +164,10 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -210,6 +234,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemandeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -218,7 +244,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Service References\Services\Reference.cs">
+    <Compile Include="Service References\ServicesDemande\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -297,10 +323,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Properties\DataSources\AGA.DTO.Models.Demande.datasource" />
-    <None Include="Service References\Services\TraiterDemande.disco" />
-    <None Include="Service References\Services\configuration91.svcinfo" />
-    <None Include="Service References\Services\configuration.svcinfo" />
-    <None Include="Service References\Services\Reference.svcmap">
+    <None Include="Service References\ServicesDemande\TraiterDemande.disco" />
+    <None Include="Service References\ServicesDemande\configuration91.svcinfo" />
+    <None Include="Service References\ServicesDemande\configuration.svcinfo" />
+    <None Include="Service References\ServicesDemande\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -344,14 +370,14 @@
     <Content Include="Views\Demande\Details.cshtml" />
     <Content Include="Views\Demande\Edit.cshtml" />
     <Content Include="Views\Demande\EnAttente.cshtml" />
-    <None Include="Service References\Services\TraiterDemande.wsdl" />
-    <None Include="Service References\Services\TraiterDemande.xsd">
+    <None Include="Service References\ServicesDemande\TraiterDemande.wsdl" />
+    <None Include="Service References\ServicesDemande\TraiterDemande.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Services\TraiterDemande1.xsd">
+    <None Include="Service References\ServicesDemande\TraiterDemande1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Services\TraiterDemande2.xsd">
+    <None Include="Service References\ServicesDemande\TraiterDemande2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -391,7 +417,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\Services\" />
+    <WCFMetadataStorage Include="Service References\ServicesDemande\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
