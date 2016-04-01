@@ -2,6 +2,7 @@ using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using AGASQLI.ServiceDemande;
+using AGASQLI.ServiceNotification;
 
 namespace AGASQLI.App_Start
 {
@@ -37,6 +38,7 @@ namespace AGASQLI.App_Start
             // container.LoadConfiguration();
 
             container.RegisterInstance<ITraiterDemande>(new TraiterDemandeClient());
+            container.RegisterInstance<INotification>(new NotificationClient());
         }
     }
 }

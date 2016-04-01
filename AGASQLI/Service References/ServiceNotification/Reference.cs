@@ -21,6 +21,12 @@ namespace AGASQLI.ServiceNotification {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotification/NotifierCollaborateur", ReplyAction="http://tempuri.org/INotification/NotifierCollaborateurResponse")]
         System.Threading.Tasks.Task NotifierCollaborateurAsync(AGA.Common.DTO.Models.Demande demande);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotification/NotifierCollaborateurList", ReplyAction="http://tempuri.org/INotification/NotifierCollaborateurListResponse")]
+        void NotifierCollaborateurList(AGA.Common.DTO.Models.Demande[] demandesList);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotification/NotifierCollaborateurList", ReplyAction="http://tempuri.org/INotification/NotifierCollaborateurListResponse")]
+        System.Threading.Tasks.Task NotifierCollaborateurListAsync(AGA.Common.DTO.Models.Demande[] demandesList);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotification/NotifierAssistantesDemandesEnAttente", ReplyAction="http://tempuri.org/INotification/NotifierAssistantesDemandesEnAttenteResponse")]
         void NotifierAssistantesDemandesEnAttente();
         
@@ -67,6 +73,14 @@ namespace AGASQLI.ServiceNotification {
         
         public System.Threading.Tasks.Task NotifierCollaborateurAsync(AGA.Common.DTO.Models.Demande demande) {
             return base.Channel.NotifierCollaborateurAsync(demande);
+        }
+        
+        public void NotifierCollaborateurList(AGA.Common.DTO.Models.Demande[] demandesList) {
+            base.Channel.NotifierCollaborateurList(demandesList);
+        }
+        
+        public System.Threading.Tasks.Task NotifierCollaborateurListAsync(AGA.Common.DTO.Models.Demande[] demandesList) {
+            return base.Channel.NotifierCollaborateurListAsync(demandesList);
         }
         
         public void NotifierAssistantesDemandesEnAttente() {

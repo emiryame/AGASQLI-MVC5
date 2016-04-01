@@ -22,6 +22,13 @@ namespace AGA.Services.Interfaces
         void NotifierCollaborateur(Demande demande);
 
         /// <summary>
+        /// Notifie les collaborateurs par mail de l'état d'avancement de leurs demandes
+        /// </summary>
+        /// <param name="demandesList">La liste des demandes</param>
+        [OperationContract]
+        void NotifierCollaborateurList(List<Demande> demandesList);
+
+        /// <summary>
         /// Notifie les assistantes par mail du nombre des demandes en attente
         /// </summary>
         [OperationContract]

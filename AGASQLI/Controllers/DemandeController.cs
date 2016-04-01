@@ -9,7 +9,12 @@ using System.Web.Mvc;
 using AGASQLI.ServiceDemande;
 using AGA.Common.DTO.Models;
 using AGASQLI.ViewModels;
+using AGASQLI.WorkflowAjouterAMesTaches;
 using Microsoft.Practices.Unity;
+using System.Activities;
+using System.ServiceModel.Activities;
+using System.Activities.XamlIntegration;
+using AGASQLI.ServiceNotification;
 
 namespace AGASQLI.Controllers
 {
@@ -17,6 +22,9 @@ namespace AGASQLI.Controllers
     {
         [Dependency]
         public ITraiterDemande demandeService { get; set; }
+
+        [Dependency]
+        public INotification notificationService { get; set; }
 
         /// <summary>
         /// Afficher la liste des demandes en attente de traitement
@@ -45,6 +53,7 @@ namespace AGASQLI.Controllers
         {
             //Recupérer la liste des demandes selectionnées.
             List<DemandeViewModel> demandesViewModelCheckedList = new List<DemandeViewModel>();
+
             if (demandesViewModelList != null)
             {
                 demandesViewModelCheckedList = demandesViewModelList.Where(d => d.IsChecked == true).ToList();
@@ -53,17 +62,18 @@ namespace AGASQLI.Controllers
             List<Demande> demandesList = new List<Demande>();
             demandesViewModelCheckedList.ForEach(d => demandesList.Add(d.Demande));
 
-            //Affecter la liste des demandes à l'assitante en question
-            demandeService.AjouterDemandesListAssistante(demandesList.ToArray(), 4);
-            demandeService.ChangerStatutEnCoursList(demandesList.ToArray());
-
+            //Démarrer le workflow: AjouterAMesTaches
+            IAjouterAMesTaches workflow = new AjouterAMesTachesClient();
+            var donnees = new AjouterDonnees() { demandesListEntree = demandesList.ToArray(), idAssistanteEntree = 4 };
+            workflow.AjouterDonnees(new AjouterDonneesRequest(donnees));
+            
             return RedirectToAction("EnAttente");
         }
 
         /// <summary>
         /// Affiche la liste des tâches en cours de l'assistante connectée
         /// </summary>
-        /// <returns></returns>
+        /// <returns>La vue "Mes Taches"</returns>
         //TODO : remplacer le bouchon "4" par l'ID de l'assitante connectée
         public ActionResult MesTaches()
         {

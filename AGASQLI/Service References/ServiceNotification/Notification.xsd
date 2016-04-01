@@ -13,6 +13,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="NotifierCollaborateurList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demandesList" nillable="true" type="q2:ArrayOfDemande" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifierCollaborateurListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NotifierAssistantesDemandesEnAttente">
     <xs:complexType>
       <xs:sequence />
@@ -26,7 +38,7 @@
   <xs:element name="NotifierResponsable">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q2:Demande" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AGA.Common.DTO.Models" minOccurs="0" name="demande" nillable="true" type="q3:Demande" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

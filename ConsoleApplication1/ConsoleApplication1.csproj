@@ -4,16 +4,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3FB72C65-3DC1-439F-9878-B74CC511B84E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{68D869D6-DD43-49F6-A89C-229E88654D8D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AGA.DTO</RootNamespace>
-    <AssemblyName>AGA.DTO</AssemblyName>
+    <RootNamespace>ConsoleApplication1</RootNamespace>
+    <AssemblyName>ConsoleApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,9 +23,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,10 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,30 +53,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapping\AutorisationCoursVacationMapping.cs" />
-    <Compile Include="Mapping\AutorisationPoursuiteEtudesMapping.cs" />
-    <Compile Include="Mapping\CiviliteMapping.cs" />
-    <Compile Include="Mapping\CollaborateurMapping.cs" />
-    <Compile Include="Mapping\DemandeMapping.cs" />
-    <Compile Include="Mapping\MailTemplateMapping.cs" />
-    <Compile Include="Mapping\StagiaireMapping.cs" />
-    <Compile Include="Mapping\StatutMapping.cs" />
-    <Compile Include="Mapping\TypeAttestationMapping.cs" />
-    <Compile Include="Models\AttestationConge.cs" />
-    <Compile Include="Models\AutorisationCoursVacation.cs" />
-    <Compile Include="Models\AutorisationPoursuiteEtudes.cs" />
-    <Compile Include="Models\Civilite.cs" />
-    <Compile Include="Models\Collaborateur.cs" />
-    <Compile Include="Models\Demande.cs" />
-    <Compile Include="Models\MailTemplate.cs" />
-    <Compile Include="Models\Stagiaire.cs" />
-    <Compile Include="Models\Statut.cs" />
-    <Compile Include="Models\TypeAttestation.cs" />
-    <Compile Include="Mapping\AttestationCongeMapping.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AGA.Business\AGA.Business.csproj">
+      <Project>{eb9c463f-fd9b-45d7-be87-57f68cab801b}</Project>
+      <Name>AGA.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AGA.Common\AGA.Common.csproj">
+      <Project>{b82aa5ee-a205-4f53-ba6e-bc9f5cd2a28c}</Project>
+      <Name>AGA.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AGA.Data\AGA.DAL.csproj">
       <Project>{dd4033de-110f-48ad-937a-7a8d67d0ded2}</Project>
       <Name>AGA.DAL</Name>

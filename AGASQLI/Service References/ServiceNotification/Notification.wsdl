@@ -13,6 +13,12 @@
   <wsdl:message name="INotification_NotifierCollaborateur_OutputMessage">
     <wsdl:part name="parameters" element="tns:NotifierCollaborateurResponse" />
   </wsdl:message>
+  <wsdl:message name="INotification_NotifierCollaborateurList_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifierCollaborateurList" />
+  </wsdl:message>
+  <wsdl:message name="INotification_NotifierCollaborateurList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotifierCollaborateurListResponse" />
+  </wsdl:message>
   <wsdl:message name="INotification_NotifierAssistantesDemandesEnAttente_InputMessage">
     <wsdl:part name="parameters" element="tns:NotifierAssistantesDemandesEnAttente" />
   </wsdl:message>
@@ -30,6 +36,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/INotification/NotifierCollaborateur" message="tns:INotification_NotifierCollaborateur_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INotification/NotifierCollaborateurResponse" message="tns:INotification_NotifierCollaborateur_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="NotifierCollaborateurList">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotification/NotifierCollaborateurList" message="tns:INotification_NotifierCollaborateurList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotification/NotifierCollaborateurListResponse" message="tns:INotification_NotifierCollaborateurList_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotifierAssistantesDemandesEnAttente">
       <wsdl:input wsaw:Action="http://tempuri.org/INotification/NotifierAssistantesDemandesEnAttente" message="tns:INotification_NotifierAssistantesDemandesEnAttente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INotification/NotifierAssistantesDemandesEnAttenteResponse" message="tns:INotification_NotifierAssistantesDemandesEnAttente_OutputMessage" />
@@ -43,6 +53,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="NotifierCollaborateur">
       <soap:operation soapAction="http://tempuri.org/INotification/NotifierCollaborateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifierCollaborateurList">
+      <soap:operation soapAction="http://tempuri.org/INotification/NotifierCollaborateurList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

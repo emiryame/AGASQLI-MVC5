@@ -39,6 +39,11 @@
                     <td>
                         @Html.CheckBoxFor(model => model[i].IsChecked)
                         @Html.HiddenFor(model => model[i].Demande.Id)
+                        @Html.HiddenFor(model=> model[i].Demande.Collaborateur.Nom)
+                        @Html.HiddenFor(model => model[i].Demande.Collaborateur.Prenom)
+
+                        @Html.HiddenFor(model => model[i].Demande.Collaborateur.Civilite.Label)
+                        @Html.HiddenFor(model => model[i].Demande.TypeAttestation.Label)
                     </td>
                     <td>
                         @Html.DisplayFor(model => model[i].Demande.Collaborateur.Nom)

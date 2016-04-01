@@ -94,5 +94,19 @@ namespace AGA.Services.Interfaces
         [OperationContract]
         void ChangerStatutRejeteeList(List<Demande> demandesList);
 
+        /// <summary>
+        /// Attribuer la dateTime courante à la date de début de traitement d'une demande
+        /// </summary>
+        /// <param name="demande">La demande</param>
+        [OperationContract]
+        void AjouterDateDebutTraitement(Demande demande);
+
+        /// <summary>
+        /// Attribuer la dateTime courante à la date de début de traitement d'une liste de demande
+        /// </summary>
+        /// <param name="demandesList">La demande</param>
+        [OperationContract]
+        void AjouterDateDebutTraitementList(List<Demande> demandesList);
+
     }
 }

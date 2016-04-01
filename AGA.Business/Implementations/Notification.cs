@@ -19,22 +19,35 @@ namespace AGA.Business.Implementations
         /// <summary>
         /// Notifie le collaborateur par mail de l'état d'avancement de sa demande
         /// </summary>
-        /// <param name="demande">la demande créée par le collaborateur</param>
+        /// <param name="demande">La demande</param>
         //TODO: Email Collab depuis getEmail de ITraiterCollaborateur
         public void NotifierCollaborateur(Demande demande)
         {
+            //Personnaliser le mail qui sera envoyé au collaborateur
             Dictionary<String, String> dictionnaireTokens = new Dictionary<string, string>();
             dictionnaireTokens.Add("%typeAttestation%", demande.TypeAttestation.Label);
             dictionnaireTokens.Add("%civilite%", demande.Collaborateur.Civilite.Label);
             dictionnaireTokens.Add("%nom%",demande.Collaborateur.Nom);
             dictionnaireTokens.Add("%prenom%", demande.Collaborateur.Prenom);
             String contenuMail = EditTemplateText(dictionnaireTokens, demande.Statut.MailTemplate.Contenu);
-
+            
+            //Récupérer le mail du collaborateur
             ITraiterCollaborateur collaborateurService = new TraiterCollaborateur();
             String destinataire = collaborateurService.GetEmail(demande.Collaborateur);
 
-            this.Notifier(destinataire, demande.Statut.MailTemplate.Objet, contenuMail);
+            //Envoyer le mail au collaborateur
+             this.Notifier(destinataire, demande.Statut.MailTemplate.Objet, contenuMail);
         }
+
+        /// <summary>
+        /// Notifie les collaborateurs par mail de l'état d'avancement de leurs demandes
+        /// </summary>
+        /// <param name="demandesList">La liste des demandes</param>
+        public async void NotifierCollaborateurList(List<Demande> demandesList)
+        {
+            demandesList.ForEach(d => this.NotifierCollaborateur(d));
+        }
+
 
         /// <summary>
         /// Notifie les assistantes par mail du nombre des demandes en attente
@@ -56,7 +69,6 @@ namespace AGA.Business.Implementations
 
             this.Notifier(destinatairesList, objet, contenuMail);
         }
-        #endregion
 
         /// <summary>
         /// Notifie le responsable de la demande en attente de sa décision
@@ -80,6 +92,8 @@ namespace AGA.Business.Implementations
             String contenuMail = EditTemplateText(dictionnaireTokens,mailTemplate.Contenu);
             this.Notifier("",objet,contenuMail);
         }
+
+        #endregion
 
         #region Private
         /// <summary>
@@ -115,7 +129,7 @@ namespace AGA.Business.Implementations
         /// <param name="objet">L'objet du mail</param>
         /// <param name="contenu">Le contenu du mail</param>
         //TODO : Externaliser le mail et le password ds un fichier de params
-        private void Notifier(String destinataire, String objet, String contenu)
+        public void Notifier(String destinataire, String objet, String contenu)
         {
             MailMessage mail = new MailMessage();
             SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
@@ -130,14 +144,17 @@ namespace AGA.Business.Implementations
             smtpServer.EnableSsl = true;
             smtpServer.UseDefaultCredentials = false;
             smtpServer.Credentials = new System.Net.NetworkCredential("aga.sqli@gmail.com", "oscare*1");
+
             try
             {
                 smtpServer.Send(mail);
             }
-            catch
+            catch (Exception)
             {
-                
+
+                throw;
             }
+            
         }
         #endregion
     }

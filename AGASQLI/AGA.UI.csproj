@@ -111,10 +111,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -260,6 +262,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\ServiceNotification\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WorkflowAjouterAMesTaches\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -412,6 +419,26 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\WorkflowAjouterAMesTaches\AGASQLI.WorkflowAjouterAMesTaches.AjouterDonneesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceNotification\Notification.wsdl" />
+    <None Include="Service References\ServiceNotification\Notification.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceNotification\Notification1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceNotification\Notification2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WorkflowAjouterAMesTaches\AjouterAMesTaches.disco" />
+    <None Include="Service References\WorkflowAjouterAMesTaches\configuration91.svcinfo" />
+    <None Include="Service References\WorkflowAjouterAMesTaches\configuration.svcinfo" />
+    <None Include="Service References\WorkflowAjouterAMesTaches\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -463,14 +490,14 @@
     <None Include="Service References\ServiceDemande\TraiterDemande2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceNotification\Notification.wsdl" />
-    <None Include="Service References\ServiceNotification\Notification.xsd">
+    <None Include="Service References\WorkflowAjouterAMesTaches\AjouterAMesTaches.wsdl" />
+    <None Include="Service References\WorkflowAjouterAMesTaches\AjouterAMesTaches.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceNotification\Notification1.xsd">
+    <None Include="Service References\WorkflowAjouterAMesTaches\AjouterAMesTaches1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceNotification\Notification2.xsd">
+    <None Include="Service References\WorkflowAjouterAMesTaches\AjouterAMesTaches2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -502,6 +529,7 @@
     <WCFMetadataStorage Include="Service References\ServiceCollaborateur\" />
     <WCFMetadataStorage Include="Service References\ServiceDemande\" />
     <WCFMetadataStorage Include="Service References\ServiceNotification\" />
+    <WCFMetadataStorage Include="Service References\WorkflowAjouterAMesTaches\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

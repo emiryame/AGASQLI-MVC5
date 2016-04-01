@@ -132,6 +132,30 @@ namespace AGA.Business.Implementations
             demandesList.ForEach(d=>ChangerStatutRejetee(d));
         }
 
+        /// <summary>
+        /// Attribuer la dateTime courante à la date de début de traitement d'une demande
+        /// </summary>
+        /// <param name="demande">La demande</param>
+        public void AjouterDateDebutTraitement(Demande demande)
+        {
+            var context= new DAL.AGADataBaseContainer();
+            DAL.Demande demandeData=context.DemandeSet.FirstOrDefault(d => d.Id == demande.Id);
+
+            demandeData.DateDebutTraitement = DateTime.Now;
+
+            context.Entry(demandeData).State = System.Data.Entity.EntityState.Modified;
+            context.SaveChanges();
+        }
+
+        /// <summary>
+        /// Attribuer la dateTime courante à la date de début de traitement d'une liste de demande
+        /// </summary>
+        /// <param name="demandesList">La demande</param>
+        public void AjouterDateDebutTraitementList(List<Demande> demandesList)
+        {
+            demandesList.ForEach(d => this.AjouterDateDebutTraitement(d));
+        }
+
         private void AjouterDemandeAssitante(Demande demande, int idAssistante)
         {
             var context = new DAL.AGADataBaseContainer();
